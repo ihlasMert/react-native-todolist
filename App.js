@@ -12,10 +12,13 @@ export default function App() {
       ...currentCourseGoals,
       { text: enteredGoalText, id: Math.random().toString() },
     ]);
+    /* if (enteredGoalText.trim() === "") {
+      alert("please enter valid thing");
+    } */
   }
 
   function deleteFunction(id) {
-    setCourseGoals(currentCourseGoals => {
+    setCourseGoals((currentCourseGoals) => {
       return currentCourseGoals.filter((goal) => goal.id !== id);
     });
   }
